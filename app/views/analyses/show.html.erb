@@ -1,0 +1,39 @@
+<p>
+  <b>分析标题</b>
+  <%=h @analysis.title %>
+</p>
+
+<p>
+  <b>关键字啊</b>
+  <%=h @analysis.keyword %>
+</p>
+
+<p>
+  <b>分析结果:</b>
+  <%=h @analysis.content %>
+</p>
+
+<p>
+  <b>分析参考:</b>
+  <%=h @analysis.reference %>
+</p>
+
+<p>
+  <b>负责人:</b>
+  <%=h @analysis.user_id %>
+</p>
+
+<p>
+  <b>创建时间:</b>
+  <%=h @analysis.created_at %>
+</p>
+
+
+<p>
+  <b>对应的需求:</b>
+  <%= link_to @analysis.demand.title,  {:controller=>'demands', :action=>'show', :id=>@analysis.demand, :method=>:get} %>
+</p>
+
+
+<%= link_to 'Edit', edit_analysis_path(@analysis) %> |
+<%= link_to 'Back', analyses_path %>

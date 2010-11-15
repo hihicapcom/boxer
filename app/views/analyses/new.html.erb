@@ -1,0 +1,27 @@
+<h1>需求分析</h1>
+
+<% form_for(@analysis,:url => { :action => :create, :id=>@demand }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    需求标题:<br/>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    关键字:<br/>
+    <%= f.text_field :keyword %>
+  </p>
+  <p>
+    分析:<br />
+    <%= f.text_area :content,:cols=>'75', :rows=>'8'  %>
+  </p>
+  <p>
+    参考/建议:<br />
+    <%= f.text_area :reference,:cols=>'75', :rows=>'8'  %>
+  </p>
+  <p>
+    <%= f.submit '创建' %>
+  </p>
+<% end %>
+
+<%= link_to '返回分析列表', analyses_path %>

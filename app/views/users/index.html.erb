@@ -1,0 +1,34 @@
+<h1>用户列表</h1>
+
+<table width="100%">
+  <tr>
+    <th>序号</th>
+    <th>用户名</th>
+    <th>真实名称</th>
+    <th>邮箱地址</th>
+    <th>联系电话</th>
+    <th>所在部门</th>
+    <th>邮编</th>
+    <th>是否启用</th>
+    <th>操作</th>
+  </tr>
+
+  <% @users.each do |user| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td><%=link_to user.id.to_s + '#',user %></td>
+        <td><%= h user.name %></td>
+        <td><%= h user.realname %></td>
+        <td><%= h user.email %></td>
+        <td><%= h user.telephone %></td>
+        <td><%= h user.department %></td>
+        <td><%= h user.post %></td>
+        <td><%= h user.enabled %></td>
+        <td><%= link_to '编辑', edit_user_path(user) %>
+          |<%= link_to '删除', user, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br/>
+
+<%= link_to '添加新用户', new_user_path %>

@@ -1,0 +1,18 @@
+<ul>
+  <li><%= link_to '首页', index_url %></li>
+  <br>
+  <% if is_logged_in? %>
+      <li>在线用户:<i><%= logged_in_user.name %></i></li>
+      <br>
+      <li><%= link_to '问题列表', {:controller=>'bugs', :action=>'index'}, :method=>:get %></li>
+      <li><%= link_to '需求列表', {:controller=>'demands', :action=>'index'}, :method=>:get %></li>
+      <li><%= link_to '分析列表', {:controller=>'analyses', :action=>'index'}, :method=>:get %></li>
+      <li><%= link_to '设计列表', {:controller=>'designs', :action=>'index'}, :method=>:get %></li>
+      <li><%= link_to '任务列表', {:controller=>'tasks', :action=>'index'}, :method=>:get %></li>
+      <li><%= link_to '模块维护', {:controller=>'units', :action=>'index'}, :method=>:get %></li>
+      <li><%= link_to '用户维护', {:controller=>'users', :action=>'index'}, :method=>:get %></li>
+      <li><%= link_to '知识库', {:controller=>'knowledges', :action=>'index'}, :method=>:get %></li>
+      <li><%= link_to '文档库',{:controller=>'docs',:action=>'index'},:method=>:get%></li>
+      <li><%= link_to '登出', {:controller=>'account', :action=>'logout'}, :method=>:post %></li>
+  <% end %>
+</ul>

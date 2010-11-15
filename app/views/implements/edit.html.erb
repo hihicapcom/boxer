@@ -1,0 +1,28 @@
+<h1>Editing implement</h1>
+
+<% form_for(@implement) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :task_id %><br />
+    <%= f.text_field :task_id %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :create_at %><br />
+    <%= f.datetime_select :create_at %>
+  </p>
+  <p>
+    <%= f.label :state_id %><br />
+    <%= f.text_field :state_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @implement %> |
+<%= link_to 'Back', implements_path %>

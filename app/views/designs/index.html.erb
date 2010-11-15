@@ -1,0 +1,27 @@
+<h1>详细设计列表</h1>
+
+<table width="100%">
+  <tr>
+    <th>编号#</th>
+    <th>标题</th>
+    <th>关键字</th>
+    <th>负责人</th>
+    <th>创建人</th>
+    <th>需求分析</th>
+    <th>操作</th>
+  </tr>
+
+  <% @designs.each do |design| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td><%= link_to "#" + design.id.to_s, design %></td>
+        <td><%= h design.title %></td>
+        <td><%= h design.keyword %></td>
+        <td><%= h User.find(design.user_id).name.to_s %></td>
+        <td><%= h design.created_at.strftime'%Y年%m月%d日%H:%M:%S' %></td>
+        <td><%= link_to '需求分析', {:controller=>'analyses', :action=>'show', :id=>design.analysis, :method=>:get} %></td>
+        <td><%= link_to '编辑', edit_design_path(design) %>
+          |<%= link_to '删除', design, :confirm => 'Are you sure?', :method => :delete %>|
+          |<%= link_to '指派任务', {:controller=>'tasks', :action=>'new', :method=>:post, :design_id=>design} %></td>
+      </tr>
+  <% end %>
+</table>

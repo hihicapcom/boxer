@@ -1,0 +1,33 @@
+<p>
+  <b>设计标题:</b>
+  <%=h @design.title %>
+</p>
+
+<p>
+  <b>关键字:</b>
+  <%=h @design.keyword %>
+</p>
+
+<p>
+  <b>设计/计划:</b>
+  <%=h @design.plan %>
+</p>
+
+<p>
+  <b>实施步骤:</b>
+  <%=h @design.stepes %>
+</p>
+
+<p>
+  <b>负责人:</b>
+  <%=h @design.user_id %>
+</p>
+
+<p>
+  <b>创建日期</b>
+  <%=h @design.created_at %>
+</p>
+
+
+<%= link_to '编辑', edit_design_path(@design) %> |
+<%= link_to '返回设计列表', designs_path %>

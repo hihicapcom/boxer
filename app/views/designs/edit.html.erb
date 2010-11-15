@@ -1,0 +1,28 @@
+<h1>便捷设计</h1>
+
+<% form_for(@design) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    标题<br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    关键字<br />
+    <%= f.text_field :keyword %>
+  </p>
+  <p>
+    设计<br />
+    <%= f.text_area :plan %>
+  </p>
+  <p>
+    实施步骤:<br />
+    <%= f.text_area :stepes %>
+  </p>
+  <p>
+    <%= f.submit '更新' %>
+  </p>
+<% end %>
+
+<%= link_to '显示', @design %> |
+<%= link_to '返回设计列表', designs_path %>

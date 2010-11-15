@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  keyword: MyString
+  content: MyString
+  comment: MyString
+  create_at: 2010-08-05 15:15:08
+  user_id: 1
+  severity_id: 1
+  frequency_id: 1
+  module_id: 1
+  state_id: 1
+  project_id: 1
+
+two:
+  title: MyString
+  keyword: MyString
+  content: MyString
+  comment: MyString
+  create_at: 2010-08-05 15:15:08
+  user_id: 1
+  severity_id: 1
+  frequency_id: 1
+  module_id: 1
+  state_id: 1
+  project_id: 1

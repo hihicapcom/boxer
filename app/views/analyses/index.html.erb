@@ -1,0 +1,29 @@
+<h1>需求分析列表</h1>
+<table width="100%">
+  <tr>
+    <th>编号</th>
+    <th>标题</th>
+    <th>关键字</th>
+    <th>负责人</th>
+    <th>创建时间</th>
+    <th>对应的需求</th>
+    <th>操作</th>
+  </tr>
+
+  <% @analyses.each do |analysis| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td><%= link_to "#("+analysis.id.to_s+")", analysis %></td>
+        <td><%= h analysis.title %></td>
+        <td><%= h analysis.keyword %></td>
+        <td><%= h User.find(analysis.user_id).realname %></td>
+        <td><%= h analysis.created_at.strftime'%Y年%m月%d日%H:%M:%S' %></td>
+        <td><%= link_to analysis.demand.title,  {:controller=>'demands', :action=>'show', :id=>analysis.demand, :method=>:get} %></td>
+        <td><%= link_to '编辑', edit_analysis_path(analysis) %>
+          |<%= link_to '删除', analysis, :confirm => 'Are you sure?', :method => :delete %>|
+          <%= link_to '设计', {:controller=>'designs', :action=>'new', :method=>:post, :id=>analysis} %>
+        </td>
+      </tr>
+  <% end %>
+</table>
+
+<br/>

@@ -1,0 +1,26 @@
+<h1>Listing implements</h1>
+
+<table>
+  <tr>
+    <th>Task</th>
+    <th>User</th>
+    <th>Create at</th>
+    <th>State</th>
+  </tr>
+
+<% @implements.each do |implement| %>
+  <tr>
+    <td><%=h implement.task_id %></td>
+    <td><%=h implement.user_id %></td>
+    <td><%=h implement.create_at %></td>
+    <td><%=h implement.state_id %></td>
+    <td><%= link_to 'Show', implement %></td>
+    <td><%= link_to 'Edit', edit_implement_path(implement) %></td>
+    <td><%= link_to 'Destroy', implement, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New implement', new_implement_path %>

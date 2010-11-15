@@ -1,0 +1,33 @@
+<p>
+  <b>任务名称:</b>
+  <%= h @task.name %>
+</p>
+
+<p>
+  <b>任务描述:</b>
+  <%= h @task.description %>
+</p>
+<p>
+  <b>计划开始时间:</b>
+  <%= h @task.start_at.strftime('%Y年%m月%d日') %>
+</p>
+
+<p>
+  <b>计划结束时间:</b>
+  <%= h @task.end_at.strftime('%Y年%m月%d日')  %>
+</p>
+
+<p>
+  <b>任务状态:</b>
+  <%= h State.find(@task.state_id).name %>
+</p>
+
+<p>
+  <b>负责人:</b>
+  <%= h State.find(@task.user_id).name %>
+</p>
+
+
+
+<%= link_to '编辑', edit_task_path(@task) %> |
+<%= link_to '返回任务列表', tasks_path %>

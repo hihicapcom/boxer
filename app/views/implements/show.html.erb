@@ -1,0 +1,23 @@
+<p>
+  <b>Task:</b>
+  <%=h @implement.task_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @implement.user_id %>
+</p>
+
+<p>
+  <b>Create at:</b>
+  <%=h @implement.create_at %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @implement.state_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_implement_path(@implement) %> |
+<%= link_to 'Back', implements_path %>

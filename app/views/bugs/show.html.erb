@@ -1,0 +1,42 @@
+<p><h1>编辑问题</h1>
+
+<% form_for(@bug) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      标题:<br/>
+      <%= f.text_field :title,:readonly=>:true %>
+    </p>
+    <p>
+      关键字:<br/>
+      <%= f.text_field :keyword,:readonly=>:true %>
+    </p>
+    <p>
+      严重程度:<br/>
+      <%= f.select :severity_id, @severities.collect{|p| [p.name, p.id]}, { :index => :severity_id },:disabled=>true %>
+    </p>
+    <p>
+      出现频率:<br/>
+      <%= f.select :frequency_id, @frequencies.collect{|p|[p.name, p.id]}, { :index => :frequency_id },:disabled=>true %>
+    </p>
+    <p>
+      问题模块:<br/>
+      <%= f.select :unit_id, @units.collect{|p|[p.name, p.id]}, { :index => :frequency_id },:disabled=>true %>
+    </p>
+    <p>
+      问题状态̬:<br/>
+      <%= f.select :state_id, @state.collect{|p|[p.name, p.id]}, { :index => :state_id },:disabled=>true %>
+    </p>
+    <p>
+      问题内容:<br/>
+        <%= fckeditor_textarea :bug,:content,:toolbarSet => 'Simple',:width => '100%',:height => '200px' %>
+    </p>
+    <p>
+      内容补充:<br/>
+    <%= fckeditor_textarea :bug,:comment,:toolbarSet => 'Simple',:width => '100%',:height => '200px' %>
+    </p>
+
+<% end %>
+
+<%= link_to '编辑', edit_bug_path(@bug) %> |
+<%= link_to '返回列表', bugs_path %>

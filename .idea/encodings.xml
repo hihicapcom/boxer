@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/app/controllers/account_controller.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/controllers/bugs_controller.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/controllers/tasks_controller.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/models/bug.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/models/demand.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/models/task.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/account/login.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/analyses/index.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/analyses/new.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/analyses/show.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/bugs/edit.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/bugs/index.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/bugs/new.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/bugs/show.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/demands/edit.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/demands/index.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/demands/new.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/demands/show.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/designs/edit.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/designs/index.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/designs/new.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/designs/show.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/docs/_add_file.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/docs/_list.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/docs/index.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/docs/new.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/knowledges/index.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/knowledges/new.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/knowledges/show.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/layouts/_menu.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/layouts/application.rhtml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/tasks/edit.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/tasks/index.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/tasks/new.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/tasks/show.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/units/edit.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/units/index.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/units/new.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/units/show.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/users/index.html.erb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/db/migrate/20100805073823_create_docs.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/db/migrate/20100807145148_add_admin_user.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/db/migrate/20100809120851_add_severities.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/db/migrate/20100809124139_add_frequencies.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/db/migrate/20100809124644_add_states.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/db/migrate/20100809125032_add_units.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/login_system.rb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/stylesheets/main.css" charset="UTF-8" />
+  </component>
+</project>
+

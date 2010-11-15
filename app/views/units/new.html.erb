@@ -1,0 +1,19 @@
+<h1>新增模块</h1>
+
+<% form_for(@unit) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    模块名称:<br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    模块描述:<br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit '创建' %>
+  </p>
+<% end %>
+
+<%= link_to '返回模块列表', units_path %>

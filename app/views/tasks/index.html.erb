@@ -1,0 +1,33 @@
+<h1>任务列表</h1>
+
+<table width="100%">
+  <tr>
+    <th>任务名称</th>
+    <th>任务类型</th>
+    <th>计划时间</th>
+    <th>任务状态</th>
+    <th>负责人</th>
+    <th>创时间</th>
+    <th>操作</th>
+  </tr>
+
+  <% @tasks.each do |task| %>
+      <tr  class="<%= cycle('list-line-odd', 'list-line-even') %>" align="center">
+        <td><%= h task.name %></td>
+        <% if !task.bug.blank? %>
+            <td><%= link_to '问题类(#' + task.bug.id.to_s +  ')', {:controller=>'bugs', :action=>'show', :id=>task.bug, :method=>:post} %></td>
+        <% elsif !task.design.blank? %>
+            <td><%= link_to '设计类', {:controller=>'designs', :action=>'show', :id=>task.design, :method=>:post} %></td>
+        <% end %>
+        <td><%= h task.start_at.strftime('%Y年%m月%d日') %>至<%= h task.end_at.strftime('%Y年%m月%d日') %></td>
+        <td><%= h State.find(task.state_id).name %></td>
+        <td><%= h User.find(task.user_id).name %></td>
+        <td><%= h task.created_at.strftime('%Y年%m月%d日%H:%M:%S') %></td>
+        <td><%= link_to '显示', task %>|
+          <%= link_to '编辑', edit_task_path(task) %>|
+          <%= link_to '删除', task, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br/>

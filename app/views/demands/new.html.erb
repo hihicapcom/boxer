@@ -1,0 +1,31 @@
+<h1>新需求</h1>
+
+<% form_for(@demand) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      需求标题:<br/>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      搜索关键字:<br/>
+      <%= f.text_field :keyword %>
+    </p>
+    <p>
+      需求内容:<br/>
+      <%= f.text_area :content,:cols=>'80', :rows=>'10'  %>
+    </p>
+    <p>
+      提出部门:<br/>
+      <%= f.text_field :department %>
+    </p>
+    <p>
+      提出人<br/>
+      <%= f.text_field :businessman %>
+    </p>
+    <p>
+      <%= f.submit '创建' %>
+    </p>
+<% end %>
+
+<%= link_to '返回需求列表', demands_path %>

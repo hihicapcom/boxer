@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  keyword: MyString
+  plan: MyText
+  stepes: MyText
+  user_id: 1
+  create_at: 2010-08-05 15:44:01
+  update_at: 2010-08-05 15:44:01
+  analysis_id: 1
+
+two:
+  title: MyString
+  keyword: MyString
+  plan: MyText
+  stepes: MyText
+  user_id: 1
+  create_at: 2010-08-05 15:44:01
+  update_at: 2010-08-05 15:44:01
+  analysis_id: 1

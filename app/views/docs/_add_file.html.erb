@@ -1,0 +1,7 @@
+<h2>上载文件</h2>
+<% form_tag({:controller=>'knowledges',:action => 'download' }, :multipart => true) do %>
+<span id="attachments_fields">
+<%= file_field_tag 'attachments[1][file]', :size => 30, :id => nil  -%>
+</span>
+<%= submit_tag '上传' %>
+<% end %> 

@@ -1,0 +1,31 @@
+<h1>编辑需求</h1>
+
+<% form_for(@demand) do |f| %>
+    <p>
+      标题:<br/>
+      <%= f.text_field :title, :readonly=>true %>
+    </p>
+    <p>
+      关键字:<br/>
+      <%= f.text_field :keyword, :readonly=>true %>
+    </p>
+    <p>
+      需求内容:<br/>
+      <%= f.text_area :content, :cols=>'80', :rows=>'10', :readonly=>true %>
+    </p>
+    <p>
+      提出部门:<br/>
+      <%= f.text_field :department, :readonly=>true %>
+    </p>
+    <p>
+      提出人:<br/>
+      <%= f.text_field :businessman, :readonly=>true %>
+    </p>
+    <p>
+      创建时间:<br/>
+      <%= f.text_field :created_at, :readonly=>true %>
+    </p>
+<% end %>
+<%= link_to '编辑', edit_demand_path(@demand) %> |
+<%= link_to '返回列表', demands_path %>
+<br/>

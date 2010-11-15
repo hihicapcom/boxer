@@ -1,0 +1,44 @@
+<h1>报告问题</h1>
+
+<% form_for(@bug) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      标题:<br/>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      关键字:<br/>
+      <%= f.text_field :keyword %>
+    </p>
+    <p>
+      严重程度:<br/>
+      <%= f.select :severity_id, @severities.collect{|p| [p.name, p.id]}, {:include_blank => true } %>
+    </p>
+    <p>
+      出现频率:<br/>
+      <%= f.select :frequency_id, @frequencies.collect{|p|[p.name, p.id]}, {:include_blank => true } %>
+    </p>
+    <p>
+      问题模块:<br/>
+      <%= f.select :unit_id, @units.collect{|p|[p.name, p.id]}, {:include_blank=>true} %>
+    </p>
+    <p>
+      问题状态:<br/>
+      <%= f.select :state_id, @state.collect{|p|[p.name, p.id]}, {:include_blank=>true} %>
+    </p>
+    <p>
+      问题内容:<br/>
+      <%= fckeditor_textarea :bug,:content,:toolbarSet => 'Simple',:width => '100%',:height => '200px' %>
+    </p>
+    <p>
+      内容补充:<br/>
+      <%= fckeditor_textarea :bug,:comment,:toolbarSet => 'Simple',:width => '100%',:height => '200px' %>
+    </p>
+
+    <p>
+      <%= f.submit '保存' %>
+    </p>
+<% end %>
+
+<%= link_to '返回问题列表', bugs_path %>

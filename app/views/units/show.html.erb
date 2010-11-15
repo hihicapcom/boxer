@@ -1,0 +1,14 @@
+<p>
+  <b>模块名称</b>
+  <%=h @unit.name %>
+</p>
+
+<p>
+  <b>模块描述:</b>
+  <%=h @unit.description %>
+</p>
+
+
+
+<%= link_to '编辑', edit_unit_path(@unit) %> |
+<%= link_to '返回', units_path %>

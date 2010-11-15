@@ -1,0 +1,38 @@
+<p>
+  <b>Name:</b>
+  <%=h @doc.name %>
+</p>
+
+<p>
+  <b>Realpath:</b>
+  <%=h @doc.realpath %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @doc.description %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @doc.user_id %>
+</p>
+
+<p>
+  <b>Create at:</b>
+  <%=h @doc.create_at %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @doc.category_id %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%=h @doc.project_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_doc_path(@doc) %> |
+<%= link_to 'Back', docs_path %>

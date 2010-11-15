@@ -1,0 +1,23 @@
+<h1>模块列表</h1>
+
+<table>
+  <tr>
+    <th>编号</th>
+    <th>模块名称</th>
+    <th>模块描述</th>
+    <th>操作</th>
+  </tr>
+
+  <% @units.each do |unit| %>
+      <tr>
+        <td><%= h unit.id %></td>
+        <td><%= h unit.name %></td>
+        <td><%= h unit.description %></td>
+        <td><%= link_to '显示', unit %>|<%= link_to '编辑', edit_unit_path(unit) %>|<%= link_to '删除', unit, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br/>
+
+<%= link_to '新增模块', new_unit_path %>

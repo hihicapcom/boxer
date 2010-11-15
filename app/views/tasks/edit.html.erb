@@ -1,0 +1,36 @@
+<h1>编辑任务</h1>
+
+<% form_for(@task) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    任务名称:<br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    任务描述:<br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    计划开始时间<br />
+    <%= f.date_select :start_at,:use_month_numbers=>true  %>
+  </p>
+  <p>
+    计划结束时间<br />
+    <%= f.date_select :end_at,:use_month_numbers=>true  %>
+  </p>
+  <p>
+    任务状态:<br />
+       <%= f.select :state_id, @state.collect{|p|[p.name, p.id]}, { :index => :state_id } %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.select :user_id,@user.collect{|p|[p.name,p.id]},{:index=>:user_id} %>
+  </p>
+  <p>
+    <%= f.submit '更新' %>
+  </p>
+<% end %>
+
+<%= link_to '显示', @task %> |
+<%= link_to '返回任务列表', tasks_path %>

@@ -1,0 +1,41 @@
+<h1>需求列表</h1>
+<table width="100%">
+  <tr>
+    <th>编号</th>
+    <th>新需求标题</th>
+    <th>关键字</th>
+    <th>提议部门</th>
+    <th>提议人</th>
+    <th>创建时间</th>
+    <th>创建人</th>
+    <th>需求分析</th>
+    <th>操作</th>
+  </tr>
+
+  <% @demands.each do |demand| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td><%= link_to "#("+demand.id.to_s+")", demand %></td>
+        <td><%= h demand.title %></td>
+        <td><%= h demand.keyword %></td>
+        <td><%= h demand.department %></td>
+        <td><%= h demand.businessman %></td>
+        <td><%= h demand.created_at.strftime('%Y年%m月%d日%H:%M:%S') %></td>
+        <td><%= h User.find(demand.user_id).realname %></td>
+        <% if demand.analyses.blank? %>
+            <td>尚未进行需求分析</td>
+        <% else %>
+            <td><%= link_to '正在进行需求分析', {:controller=>'analyses', :action=>'show', :method=>:get, :id=>demand.analyses} %></td>
+        <% end %>
+
+        <td><%= link_to '编辑', edit_demand_path(demand) %>
+          |<%= link_to '删除', demand, :confirm => 'Are you sure?', :method => :delete %>
+          <% if demand.analyses.blank? %>
+              |<%= link_to '立即进行分析', {:controller=>'analyses', :action=>'new', :method=>:post, :id=>demand} %>
+          <% end %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br/>
+
+<%= link_to '添加新需求>>', new_demand_path %>

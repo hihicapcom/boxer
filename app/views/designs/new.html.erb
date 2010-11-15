@@ -1,0 +1,31 @@
+<h1>新设计</h1>
+
+<% form_for(@design) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    标题:<br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    关键字:<br />
+    <%= f.text_field :keyword %>
+  </p>
+  <p>
+    设计/计划:<br />
+    <%= f.text_area :plan,:cols=>'75', :rows=>'8'  %>
+  </p>
+  <p>
+    实施步骤:<br />
+    <%= f.text_area :stepes,:cols=>'75', :rows=>'8'  %>
+  </p>
+  <p>
+    负责人:<br />
+     <%= f.select :user_id, @user.collect{|p|[p.name, p.id]} %>
+  </p>
+  <p>
+    <%= f.submit '创建' %>
+  </p>
+<% end %>
+
+<%= link_to '返回设计首页', designs_path %>

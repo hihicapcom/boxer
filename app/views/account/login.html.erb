@@ -1,0 +1,6 @@
+<h2>登陆</h2>
+<% form_for :user,:url=>{:action=>'authenticate'} do |f| %>
+  <p>用户:  <%=f.text_field :username,:size=>30%></p>
+  <p>密码:  <%=f.password_field :password,:size=>30%></p>
+  <%= submit_tag '登录' %>
+<% end %>

@@ -1,0 +1,38 @@
+<p>
+  <b>标题:</b>
+  <%=h @knowledge.title %>
+</p>
+
+<p>
+  <b>案例内容:</b>
+  <%=h @knowledge.content %>
+</p>
+
+<p>
+  <b>案例分析:</b>
+  <%=h @knowledge.analysis %>
+</p>
+
+<p>
+  <b>解决方案:</b>
+  <%=h @knowledge.plan %>
+</p>
+
+<p>
+  <b>知识汇集:</b>
+  <%=h @knowledge.knowledge %>
+</p>
+
+<p>
+  <b>参考意见:</b>
+  <%=h @knowledge.reference %>
+</p>
+
+<p>
+  <b>用户:</b>
+  <%=h @knowledge.user_id %>
+</p>
+
+
+<%= link_to '编辑', edit_knowledge_path(@knowledge) %> |
+<%= link_to '返回列表', knowledges_path %>

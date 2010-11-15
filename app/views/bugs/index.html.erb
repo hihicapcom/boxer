@@ -1,0 +1,107 @@
+<% form_for(@bug, :url => {:action =>:search}, :html=>{:method=>:get}) do |f| %>
+    <table width="100%" border="1">
+      <tr>
+        <td>编号</td>
+        <td><%= f.text_field :id %></td>
+        <td>关键字</td>
+        <td><%= f.text_field :keyword %></td>
+      </tr>
+      <tr>
+        <td>标题</td>
+        <td><%= f.text_field :title %></td>
+        <td>报告时间</td>
+        <td>
+          <input id="startTime" name="startTime"/>至<input id="endTime" name="endTime"/>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" align="right">
+          <%= f.submit '查询' %>
+          <input type="reset" value="重置"/>
+        </td>
+      </tr>
+    </table>
+<% end %>
+
+<table width="100%" border="1">
+  <tr>
+    <th>
+      <NOBR><%= link_to "编号", :action => "sort",:id=>'id' %></NOBR>
+    </th>
+    <th>
+      <NOBR>关键字</NOBR>
+    </th>
+    <th width="30%"><%= link_to "标题", :action => "sort",:id=>'title' %></th>
+    <th>
+      <NOBR>报告时间</NOBR>
+    </th>
+    <th>
+      <NOBR>报告人</NOBR>
+    </th>
+    <th>
+      <NOBR>严重程度</NOBR>
+    </th>
+    <th>
+      <NOBR>出现频率</NOBR>
+    </th>
+    <th>
+      <NOBR>问题模块</NOBR>
+    </th>
+    <th>
+      <NOBR>状态</NOBR>
+    </th>
+    <th width="10%">
+      <NOBR>操作</NOBR>
+    </th>
+  </tr>
+
+  <% @bugs.each do |bug| %>
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>" align="center">
+        <td>
+          <NOBR><%= link_to "#"+bug.id.to_s, bug %></NOBR>
+        </td>
+        <td>
+          <NOBR><%= h bug.keyword %></NOBR>
+        </td>
+        <td>
+          <NOBR><%= h bug.title %></NOBR>
+        </td>
+        <td>
+          <NOBR><%= h bug.created_at.strftime('%Y年%m月%d日%H:%M:%S') %></NOBR>
+        </td>
+        <td>
+          <NOBR><%= h User.find(bug.user_id).realname %></NOBR>
+        </td>
+        <td>
+          <NOBR><%= h Severity.find(bug.severity_id).name %></NOBR>
+        </td>
+        <td>
+          <NOBR><%= h Frequency.find(bug.frequency_id).name %></NOBR>
+        </td>
+        <td>
+          <NOBR><%= h Unit.find(bug.unit_id).name %></NOBR>
+        </td>
+        <td>
+          <NOBR><%= h State.find(bug.state_id).name %></NOBR>
+        </td>
+        <td>
+          <NOBR><%= link_to '编辑', edit_bug_path(bug) %>
+            |<%= link_to '删除', bug, :confirm => 'Are you sure?', :method => :delete %>|
+            <% if bug.tasks.blank? %>
+                |<%= link_to '指派任务', {:controller=>'tasks', :action=>'new', :method=>:post, :bug_id=>bug} %>
+            <% end %>
+          </NOBR>
+        </td>
+      </tr>
+  <% end %>
+</table>
+
+
+
+<br/>
+<div class="apple_pagination">
+  <%= will_paginate @bugs %>
+</div>
+
+
+<%= link_to '报告问题>>', new_bug_path %>
