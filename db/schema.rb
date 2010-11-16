@@ -118,14 +118,6 @@ ActiveRecord::Schema.define(:version => 20100809125032) do
     t.datetime "updated_at"
   end
 
-  create_table "modules", :force => true do |t|
-    t.string   "name",        :limit => 200
-    t.text     "description"
-    t.integer  "project_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "participates", :force => true do |t|
     t.integer  "user_id"
     t.integer  "project_id"
